@@ -12,13 +12,11 @@
             </span>
           </div>
           <div class="card-actions">
-            <button class="action-button" (click)="confirmarEliminarPedido(pedido)">
+            <button class="action-button" (click)="confirmarEliminarPedido(pedido)" title="Confirmar pedido">
               <img src="assets/imagenes/aceptar.png" alt="Confirmar" class="action-icon">
-              <span class="tooltip-text">Confirmar pedido</span>
             </button>
-            <button class="action-button" (click)="confirmarEliminarPedido(pedido)">
+            <button class="action-button" (click)="confirmarEliminarPedido(pedido)" title="Cancelar pedido">
               <img src="assets/imagenes/cancelar.png" alt="Cancelar" class="action-icon">
-              <span class="tooltip-text">Cancelar pedido</span>
             </button>
           </div>
         </div>
@@ -49,10 +47,10 @@
             </span>
           </div>
           <div class="card-actions">
-            <button class="action-button" (click)="confirmarEliminarReserva(reserva)">
+            <button class="action-button" (click)="confirmarEliminarReserva(reserva)" title="Confirmar reserva">
               <img src="assets/imagenes/aceptar.png" alt="Confirmar" class="action-icon">
             </button>
-            <button class="action-button" (click)="confirmarEliminarReserva(reserva)">
+            <button class="action-button" (click)="confirmarEliminarReserva(reserva)" title="Cancelar reserva">
               <img src="assets/imagenes/cancelar.png" alt="Cancelar" class="action-icon">
             </button>
           </div>

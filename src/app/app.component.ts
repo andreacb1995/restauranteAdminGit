@@ -65,7 +65,6 @@ export class AdministradorComponent implements OnInit {
     this.administradorService.obtenerPedidos().subscribe({
       next: (response: Pedido[]) => {
         this.pedidos = response;
-        console.log('Pedidos:', this.pedidos);
       },
       error: (error) => {
         console.error('Error al obtener las reservas:', error);
