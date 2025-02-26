@@ -1,33 +1,65 @@
-<div class="container-menu">
-    <h2>La Bella Tavola</h2>
-    <div class="container-admin">
-      <p>Admin</p>
-      <div class="icono">
-        <img src="assets/imagenes/candado.png">
-      </div>
-    </div>
-  </div>
-  
+<app-cabecera-administrador></app-cabecera-administrador>
 <div id="pedidos-reservas" class="container">
   <div id="columnas">
-      <div class="columna" id="pedidos">
-        <h3>Pedidos</h3>
-        <div *ngFor="let pedido of pedidos" class="card-administrador">
-          <p><strong>Cliente:</strong> {{ pedido.nombre }}</p>
-          <p><strong>Producto:</strong> {{ pedido.producto }}</p>
-          <p><strong>Cantidad:</strong> {{ pedido.cantidad }}</p>
-          <p><strong>Estado:</strong> {{ pedido.estado }}</p>
+    <div class="columna" id="pedidos">
+      <h3>Pedidos</h3>
+      <div *ngFor="let pedido of pedidos; let i = index" class="card-administrador">
+        <div class="card-header">
+          <div class="card-title">
+            <h4>{{ pedido.nombre }}</h4>
+            <span class="expand-icon" (click)="togglePedido(i)">
+              <span class="expand-icon">▼</span>
+            </span>
+          </div>
+          <div class="card-actions">
+            <button class="action-button" (click)="confirmarEliminarPedido(pedido)">
+              <img src="assets/imagenes/aceptar.png" alt="Confirmar" class="action-icon">
+            </button>
+            <button class="action-button" (click)="confirmarEliminarPedido(pedido)">
+              <img src="assets/imagenes/cancelar.png" alt="Cancelar" class="action-icon">
+            </button>
+          </div>
+        </div>
+        <div class="card-content" *ngIf="expandedPedidoId === i">
+          <p><strong>Teléfono:</strong> {{ pedido.telefono }}</p>
+          <p><strong>Productos:</strong></p>
+          <ul class="platos-list">
+            <li *ngFor="let plato of pedido.platos">
+              <div class="plato-item">
+                <strong>{{ plato.nombre }}</strong>
+                <p class="plato-descripcion">{{ plato.descripcion }}</p>
+              </div>
+            </li>
+          </ul>    
+          <p><strong>Total:</strong> {{ pedido.precio }} €</p>
         </div>
       </div>
-      <div class="columna" id="reservas">
-        <h3>Reservas</h3>
-        <div *ngFor="let reserva of reservas" class="card-administrador">
-          <p><strong>Nombre:</strong> {{ reserva.nombre }}</p>
-          <p><strong>Fecha:</strong> {{ reserva.fecha | date: 'shortDate' }}</p>
+    </div>
+    <div class="columna" id="reservas">
+      <h3>Reservas</h3>
+      <div *ngFor="let reserva of reservas; let i = index" class="card-administrador">
+        <div class="card-header">
+          <div class="card-title">
+            <h4>{{ reserva.nombre }}</h4>
+            <span class="expand-icon" (click)="toggleReserva(i)">
+              <span class="expand-icon">▼</span>
+            </span>
+          </div>
+          <div class="card-actions">
+            <button class="action-button" (click)="confirmarEliminarReserva(reserva)">
+              <img src="assets/imagenes/aceptar.png" alt="Confirmar" class="action-icon">
+            </button>
+            <button class="action-button" (click)="confirmarEliminarReserva(reserva)">
+              <img src="assets/imagenes/cancelar.png" alt="Cancelar" class="action-icon">
+            </button>
+          </div>
+        </div>
+        <div class="card-content" *ngIf="expandedReservaId === i">
+          <p><strong>Fecha:</strong> {{ reserva.fecha | date: 'dd/MM/yyyy' }}</p>
           <p><strong>Hora:</strong> {{ reserva.hora }}</p>
           <p><strong>Comensales:</strong> {{ reserva.ncomensales }}</p>
-          <p><strong>Estado:</strong> {{ reserva.estadoReserva }}</p>
         </div>
       </div>
+    </div>
   </div>
 </div>

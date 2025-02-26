@@ -1,7 +1,7 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import { AdministradorComponent } from './app/app.component';
 
-bootstrapApplication(AppComponent, {
+bootstrapApplication(AdministradorComponent, {
   providers: []
 });
