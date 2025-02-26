@@ -14,14 +14,17 @@
           <div class="card-actions">
             <button class="action-button" (click)="confirmarEliminarPedido(pedido)">
               <img src="assets/imagenes/aceptar.png" alt="Confirmar" class="action-icon">
+              <span class="tooltip-text">Confirmar pedido</span>
             </button>
             <button class="action-button" (click)="confirmarEliminarPedido(pedido)">
               <img src="assets/imagenes/cancelar.png" alt="Cancelar" class="action-icon">
+              <span class="tooltip-text">Cancelar pedido</span>
             </button>
           </div>
         </div>
         <div class="card-content" *ngIf="expandedPedidoId === i">
           <p><strong>Teléfono:</strong> {{ pedido.telefono }}</p>
+          <p><strong>Dirección:</strong> {{ pedido.direccion }}</p>
           <p><strong>Productos:</strong></p>
           <ul class="platos-list">
             <li *ngFor="let plato of pedido.platos">
