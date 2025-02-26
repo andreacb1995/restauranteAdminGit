@@ -8,13 +8,26 @@
     </div>
   </div>
   
-<div id="kanban" class="container">
+<div id="pedidos-reservas" class="container">
   <div id="columnas">
       <div class="columna" id="pedidos">
         <h3>Pedidos</h3>
+        <div *ngFor="let pedido of pedidos" class="card-administrador">
+          <p><strong>Cliente:</strong> {{ pedido.nombre }}</p>
+          <p><strong>Producto:</strong> {{ pedido.producto }}</p>
+          <p><strong>Cantidad:</strong> {{ pedido.cantidad }}</p>
+          <p><strong>Estado:</strong> {{ pedido.estado }}</p>
+        </div>
       </div>
       <div class="columna" id="reservas">
         <h3>Reservas</h3>
+        <div *ngFor="let reserva of reservas" class="card-administrador">
+          <p><strong>Nombre:</strong> {{ reserva.nombre }}</p>
+          <p><strong>Fecha:</strong> {{ reserva.fecha | date: 'shortDate' }}</p>
+          <p><strong>Hora:</strong> {{ reserva.hora }}</p>
+          <p><strong>Comensales:</strong> {{ reserva.ncomensales }}</p>
+          <p><strong>Estado:</strong> {{ reserva.estadoReserva }}</p>
+        </div>
       </div>
   </div>
 </div>

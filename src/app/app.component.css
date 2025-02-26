@@ -23,59 +23,75 @@
     color: white;
     padding: 10px;
     margin: 0;
+    font-weight: 400;
+    font-style: normal;
   }
 
   .container-admin {
     position: absolute;
-    right: 20px;
+    right: 15px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 5px 10px;
 }
 
 .container-admin p {
     color: white;
     font-size: 18px;
-    margin: 0;
+    margin-top: 50px;
 }
 
 .icono {
     width: 75px;
     height: 75px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
 }
-
 
 #columnas {
     display: flex;
-    gap: 15px;
+    gap: 50px;
     padding: 20px;
     align-items: center; 
     justify-content: center;
+    border: 1px solid red;
 }
 /* Estilos para cada columna */
 .columna {
     font-family: 'EB Garamond';
     background-color: #ebecf0;
     border-radius: 12px;
-    min-width: 300px;
+    min-width: 600px;
     width: 700px;
     min-height: 200px; 
-    padding: 0px 50px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    text-align: center;
     flex-direction: column;
-    height: fit-content; 
-    max-height: none; 
+    align-items: center;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Título de la columna */
 .columna h3 {
     margin: 0 0 20px 0;
-    width: 100%;
+    width: fit-content;
     padding: 10px;
     font-size: 20px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+  
+.card-administrador {
+  background: white;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  width: 80%;
 }
